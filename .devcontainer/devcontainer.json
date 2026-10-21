@@ -1,0 +1,18 @@
+{
+  "name": "Gió Studio — Chạy trên trình duyệt",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:5.2.3-24-bookworm",
+  "remoteUser": "node",
+  "containerEnv": {
+    "HOST": "0.0.0.0",
+    "PORT": "3000"
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Gió Studio",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm run check && npm test",
+  "postStartCommand": "bash .devcontainer/start.sh"
+}
