@@ -1,0 +1,16 @@
+{
+  "name": "gio-studio-clothing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cửa hàng thời trang tiếng Việt, Node.js và SQLite",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "check": "node --check server/index.js && node --check server/db.js && node --check public/js/app.js",
+    "test": "node --test"
+  }
+}

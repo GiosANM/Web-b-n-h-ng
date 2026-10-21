@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#34483d" />
+    <meta
+      name="description"
+      content="Gió Studio — thời trang nam, nữ và phụ kiện cho những ngày là chính mình. Khám phá quần áo tinh giản, chọn màu và cỡ, đặt hàng COD."
+    />
+    <title>Gió Studio — Mặc điều bạn yêu.</title>
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/js/app.js"></script>
+  </head>
+  <body>
+    <a href="#shop" class="skip-link">Đến danh sách sản phẩm</a>
+    <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="i-bag" viewBox="0 0 24 24">
+          <path d="M5 7h14l1 14H4L5 7Z" />
+          <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+          <path
+            d="M20.4 4.6a5.5 5.5 0 0 0-7.8 0L12 5.2l-.6-.6a5.5 5.5 0 0 0-7.8 7.8L12 21l8.4-8.6a5.5 5.5 0 0 0 0-7.8Z"
+          />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 24 24">
+          <circle cx="10.5" cy="10.5" r="7" />
+          <path d="m16 16 5 5" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h16m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="i-close" viewBox="0 0 24 24">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+        <symbol id="i-box" viewBox="0 0 24 24">
+          <path d="m3 6 9-4 9 4v12l-9 4-9-4V6Zm0 0 9 4 9-4M12 10v12M7 4l10 4" />
+        </symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24">
+          <path d="M2 4h12v13H2V4Zm12 5h4l4 5v3h-8" />
+          <circle cx="6" cy="18" r="2" />
+          <circle cx="18" cy="18" r="2" />
+        </symbol>
+        <symbol id="i-return" viewBox="0 0 24 24">
+          <path d="M4 10a8 8 0 1 1 0 6M4 4v6h6" />
+        </symbol>
+        <symbol id="i-leaf" viewBox="0 0 24 24">
+          <path
+            d="M20 3c-1 7 2 15-8 16-7 1-10-8-5-12 3-3 8-1 13-4ZM4 22 16 9"
+          />
+        </symbol>
+        <symbol id="i-user" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 22v-2a8 8 0 0 1 16 0v2" />
+        </symbol>
+      </defs>
+    </svg>
+    <div class="topbar">
+      <span>Đón một ngày mới, trong điều bạn yêu.</span
+      ><button data-info="shipping">
+        Miễn phí giao hàng từ 699.000đ <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+    <header class="header">
+      <div class="header-inner container">
+        <button
+          class="icon-button mobile-menu"
+          id="menu-toggle"
+          aria-label="Mở điều hướng"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          <svg><use href="#i-menu" /></svg>
+        </button>
+        <a href="#" class="logo" aria-label="Gió Studio trang chủ"
+          >gió<span>STUDIO</span></a
+        >
+        <nav id="navigation" aria-label="Điều hướng chính">
+          <button data-nav="all" class="nav-active">Khám phá</button
+          ><button data-nav="women">Nữ</button
+          ><button data-nav="men">Nam</button
+          ><button data-nav="accessories">Phụ kiện</button
+          ><a href="#story">Câu chuyện Gió</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-button"
+            id="focus-search"
+            aria-label="Tìm kiếm sản phẩm"
+          >
+            <svg><use href="#i-search" /></svg></button
+          ><button
+            class="icon-button"
+            id="favorites-button"
+            aria-label="Xem sản phẩm yêu thích"
+            aria-pressed="false"
+          >
+            <svg><use href="#i-heart" /></svg
+            ><span id="favorite-count" class="small-count" hidden
+              >0</span
+            ></button
+          ><button
+            class="icon-button orders-button"
+            id="orders-button"
+            aria-label="Đơn hàng của tôi"
+          >
+            <svg><use href="#i-user" /></svg></button
+          ><button class="cart-open" id="cart-open" aria-label="Mở giỏ hàng">
+            <svg><use href="#i-bag" /></svg
+            ><span class="cart-label">Giỏ hàng</span
+            ><span id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> THE EVERYDAY EDIT · 2026</p>
+          <h1>Mặc điều<br />bạn <em>yêu.</em></h1>
+          <p>
+            Không cần cầu kỳ để là chính mình.<br />Những thiết kế tinh giản,
+            đồng hành cùng bạn<br class="desktop-br" />
+            trong mọi khoảnh khắc thường ngày.
+          </p>
+          <button class="button" data-nav="all">
+            Khám phá bộ sưu tập <svg><use href="#i-arrow" /></svg></button
+          ><a href="#story" class="text-link"
+            >Một chút về Gió <span>↗</span></a
+          >
+          <div class="hero-bottom">
+            <span>Ít hơn, nhưng tốt hơn.</span><span>01 — 12</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="/images/editorial.png"
+            alt="Bộ sưu tập Gió Studio: váy linen màu kem và sơ mi xanh olive"
+            fetchpriority="high"
+            width="1536"
+            height="1024"
+          /><span class="photo-tag">SIMPLE PIECES.<br />BEAUTIFUL DAYS.</span
+          ><a class="hero-image-link" href="#shop"
+            >Khám phá phong cách của bạn <span>↗</span></a
+          >
+        </div>
+      </section>
+      <div class="trust-strip container">
+        <div>
+          <svg><use href="#i-truck" /></svg><span>Giao hàng toàn quốc</span>
+        </div>
+        <span class="trust-dot">·</span>
+        <div>
+          <svg><use href="#i-return" /></svg
+          ><button data-info="returns">Đổi sản phẩm trong 7 ngày*</button>
+        </div>
+        <span class="trust-dot">·</span>
+        <div>
+          <svg><use href="#i-leaf" /></svg><span>Chất liệu được chọn kỹ</span>
+        </div>
+        <span class="trust-dot">·</span>
+        <div>
+          <svg><use href="#i-box" /></svg><span>Thanh toán khi nhận hàng</span>
+        </div>
+      </div>
+      <section id="shop" class="shop-section container">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">TỦ ĐỒ CỦA BẠN, THEO CÁCH CỦA BẠN</p>
+            <h2>Điều bạn muốn mặc hôm nay.</h2>
+          </div>
+          <p class="section-note">Dễ mặc. Dễ phối. Dễ yêu.</p>
+        </div>
+        <div class="category-tabs" role="group" aria-label="Bộ sưu tập">
+          <button class="active" data-gender="all" aria-pressed="true">
+            Tất cả sản phẩm <span>12</span></button
+          ><button data-gender="women" aria-pressed="false">Dành cho nữ</button
+          ><button data-gender="men" aria-pressed="false">Dành cho nam</button
+          ><button data-gender="unisex" aria-pressed="false">Unisex</button
+          ><button data-gender="accessories" aria-pressed="false">
+            Phụ kiện
+          </button>
+        </div>
+        <div class="catalog-layout">
+          <aside class="filters" aria-label="Bộ lọc sản phẩm">
+            <div class="filter-title">
+              <h3>Bộ lọc</h3>
+              <button class="link-button" id="clear-filters">Xóa lọc</button>
+            </div>
+            <fieldset>
+              <legend>Danh mục</legend>
+              <label
+                ><input type="radio" name="category" value="all" checked /> Tất
+                cả</label
+              ><label
+                ><input type="radio" name="category" value="tops" /> Áo & áo
+                khoác</label
+              ><label
+                ><input type="radio" name="category" value="bottoms" /> Quần &
+                chân váy</label
+              ><label
+                ><input type="radio" name="category" value="dresses" /> Váy
+                liền</label
+              ><label
+                ><input type="radio" name="category" value="accessories" /> Túi
+                & phụ kiện</label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>Khoảng giá</legend>
+              <label
+                ><input type="radio" name="price" value="all" checked /> Tất cả
+                mức giá</label
+              ><label
+                ><input type="radio" name="price" value="under300" /> Dưới
+                300.000đ</label
+              ><label
+                ><input type="radio" name="price" value="300to500" /> 300.000đ –
+                500.000đ</label
+              ><label
+                ><input type="radio" name="price" value="over500" /> Trên
+                500.000đ</label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>Kích cỡ</legend>
+              <div class="size-filter" role="group" aria-label="Lọc theo cỡ">
+                <button data-filter-size="S" aria-pressed="false">S</button
+                ><button data-filter-size="M" aria-pressed="false">M</button
+                ><button data-filter-size="L" aria-pressed="false">L</button
+                ><button data-filter-size="XL" aria-pressed="false">XL</button>
+              </div>
+            </fieldset>
+            <div class="sidebar-note">
+              <svg><use href="#i-leaf" /></svg>
+              <p>Một tủ đồ ít hơn.<br />Nhiều cách phối hơn.</p>
+              <span>Bắt đầu từ những điều cơ bản.</span>
+            </div>
+          </aside>
+          <div class="catalog">
+            <div class="catalog-toolbar">
+              <label class="search-field"
+                ><svg><use href="#i-search" /></svg
+                ><input
+                  type="search"
+                  id="search"
+                  placeholder="Tìm món đồ bạn thích…"
+                  aria-label="Tìm sản phẩm" /></label
+              ><label class="sort-field"
+                ><span>Sắp xếp:</span
+                ><select id="sort" aria-label="Sắp xếp sản phẩm">
+                  <option value="featured">Gió gợi ý</option>
+                  <option value="price-asc">Giá tăng dần</option>
+                  <option value="price-desc">Giá giảm dần</option>
+                  <option value="new">Mới nhất</option>
+                </select></label
+              >
+            </div>
+            <div class="results-line">
+              <span id="result-count" aria-live="polite"
+                >Đang tải bộ sưu tập…</span
+              ><button
+                id="filter-toggle"
+                class="link-button"
+                aria-expanded="false"
+              >
+                Hiện bộ lọc</button
+              ><button class="link-button" id="exit-favorites" hidden>
+                Xem tất cả
+              </button>
+            </div>
+            <div id="product-grid" class="product-grid" aria-busy="true"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <svg><use href="#i-search" /></svg>
+              <h3>Chưa tìm thấy món phù hợp</h3>
+              <p>Thử một từ khóa khác hoặc bỏ bớt bộ lọc nhé.</p>
+              <button class="button secondary" id="empty-reset">
+                Xóa bộ lọc
+              </button>
+            </div>
+            <div class="empty-state" id="load-error" hidden>
+              <h3>Chưa kết nối được cửa hàng</h3>
+              <p>
+                Hãy chạy <code>npm start</code> trong thư mục dự án và mở
+                <strong>http://localhost:3000</strong>. Live Server không chạy
+                backend.
+              </p>
+              <button class="button secondary" id="retry-products">
+                Thử lại
+              </button>
+            </div>
+            <p class="catalog-footnote">
+              12 thiết kế. Vô vàn cách là chính bạn.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="collection-banner container">
+        <div>
+          <p class="eyebrow">THE LINEN STORY</p>
+          <h2>Nhẹ một chút.<br />Tự do thêm một chút.</h2>
+          <p>
+            Linen thoáng nhẹ, sắc màu gần gũi.<br />Cho những ngày bạn muốn chậm
+            lại.
+          </p>
+          <button class="button light" id="linen-collection">
+            Khám phá linen <svg><use href="#i-arrow" /></svg>
+          </button>
+        </div>
+        <div class="collection-image">
+          <img
+            src="/images/editorial.png"
+            alt="Thiết kế linen màu trung tính trong bộ sưu tập Gió"
+            loading="lazy"
+            width="1536"
+            height="1024"
+          />
+        </div>
+        <span class="collection-number">02 / THE LINEN STORY</span>
+      </section>
+      <section id="story" class="story-section container">
+        <div>
+          <p class="eyebrow">CHÚNG TÔI LÀ GIÓ</p>
+          <h2>Thời trang đi cùng bạn.<br />Không chạy trước bạn.</h2>
+        </div>
+        <div>
+          <p>
+            Gió bắt đầu từ một ý nghĩ nhỏ: những món đồ đẹp nhất là những món đồ
+            bạn thật sự muốn mặc — hôm nay, ngày mai, và nhiều ngày sau nữa.
+          </p>
+          <p>
+            Chúng tôi chọn phom dáng gọn gàng, chất liệu dễ chịu và những sắc
+            màu có thể ở cạnh nhau. Để mỗi sáng, việc chọn đồ trở thành một niềm
+            vui.
+          </p>
+          <span class="signature">Gió Studio — Everyday, your way.</span>
+        </div>
+      </section>
+      <section class="service-section container">
+        <div>
+          <svg><use href="#i-truck" /></svg>
+          <h3>Giao hàng tận tay</h3>
+          <p>Phí 30.000đ. Miễn phí từ 699.000đ<br />sau khi áp dụng ưu đãi.</p>
+        </div>
+        <div>
+          <svg><use href="#i-return" /></svg>
+          <h3>Đổi cỡ dễ dàng</h3>
+          <p>
+            Tham khảo chính sách đổi trong 7 ngày.<br />Giữ nguyên tem và tình
+            trạng sản phẩm.
+          </p>
+          <button data-info="returns" class="link-button">
+            Xem điều kiện ↗
+          </button>
+        </div>
+        <div>
+          <svg><use href="#i-heart" /></svg>
+          <h3>Chọn điều phù hợp</h3>
+          <p>
+            Xem chất liệu, phom dáng và bảng cỡ<br />trước khi chọn món đồ của
+            bạn.
+          </p>
+          <button data-info="sizes" class="link-button">
+            Hướng dẫn chọn cỡ ↗
+          </button>
+        </div>
+      </section>
+      <section class="welcome-banner container">
+        <div>
+          <p class="eyebrow">MỘT LỜI CHÀO TỪ GIÓ</p>
+          <h2>Món bạn thích, ưu đãi thêm 10%.</h2>
+          <p>Dùng mã CHAO10 · Giảm tối đa 100.000đ cho đơn hàng mẫu.</p>
+        </div>
+        <button class="coupon-button" id="welcome-coupon">
+          CHAO10 <span>Lưu mã ↗</span>
+        </button>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-grid container">
+        <div class="footer-brand">
+          <a class="logo" href="#">gió<span>STUDIO</span></a>
+          <p>Những điều giản đơn.<br />Cho những ngày là chính mình.</p>
+          <span>Designed for your everyday.</span>
+        </div>
+        <div>
+          <h3>Khám phá</h3>
+          <button data-nav="women">Thời trang nữ</button
+          ><button data-nav="men">Thời trang nam</button
+          ><button data-nav="accessories">Túi & phụ kiện</button
+          ><button id="footer-favorites">Món đồ yêu thích</button
+          ><button data-orders>Đơn hàng của tôi</button>
+        </div>
+        <div>
+          <h3>Gió ở đây để giúp</h3>
+          <button data-info="sizes">Hướng dẫn chọn cỡ</button
+          ><button data-info="shipping">Giao hàng & thanh toán</button
+          ><button data-info="returns">Chính sách đổi hàng</button
+          ><button data-info="privacy">Quyền riêng tư</button>
+        </div>
+        <div>
+          <h3>Một chút kết nối</h3>
+          <p>
+            Cửa hàng đang trong giai đoạn thử nghiệm.<br />Thông tin liên hệ sẽ
+            cập nhật trước khi mở bán.
+          </p>
+          <button data-info="faq" class="footer-contact">
+            Câu hỏi thường gặp ↗
+          </button>
+          <p class="demo-label">
+            Sản phẩm và chính sách minh họa.<br />Chưa tích hợp thanh toán trực
+            tuyến.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <span>© 2026 Gió Studio. Everyday, your way.</span
+        ><span>Việt Nam · VND ₫</span>
+      </div>
+    </footer>
+    <dialog
+      id="product-dialog"
+      class="product-dialog"
+      aria-labelledby="product-title"
+    >
+      <button
+        class="dialog-close icon-button"
+        data-close="product-dialog"
+        aria-label="Đóng chi tiết"
+      >
+        <svg><use href="#i-close" /></svg>
+      </button>
+      <div id="product-detail"></div>
+    </dialog>
+    <dialog id="cart-dialog" class="cart-dialog" aria-labelledby="cart-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">NHỮNG MÓN BẠN CHỌN</p>
+          <h2 id="cart-title">Giỏ hàng của bạn</h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close="cart-dialog"
+          aria-label="Đóng giỏ hàng"
+        >
+          <svg><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div id="cart-content"></div>
+    </dialog>
+    <dialog
+      id="checkout-dialog"
+      class="checkout-dialog"
+      aria-labelledby="checkout-title"
+    >
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">THÊM MỘT BƯỚC NỮA THÔI</p>
+          <h2 id="checkout-title">Thông tin nhận hàng</h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close="checkout-dialog"
+          aria-label="Đóng thanh toán"
+        >
+          <svg><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="checkout-layout">
+        <form id="checkout-form">
+          <div class="form-grid">
+            <label
+              >Họ và tên <span>*</span
+              ><input
+                name="name"
+                required
+                minlength="2"
+                maxlength="100"
+                autocomplete="name"
+                placeholder="Nguyễn An" /></label
+            ><label
+              >Số điện thoại <span>*</span
+              ><input
+                name="phone"
+                type="tel"
+                required
+                pattern="\+?[0-9][0-9 \-]{7,18}"
+                maxlength="20"
+                autocomplete="tel"
+                placeholder="090 123 4567"
+            /></label>
+          </div>
+          <label
+            >Tỉnh / Thành phố <span>*</span
+            ><input
+              name="city"
+              required
+              minlength="2"
+              maxlength="100"
+              autocomplete="address-level1"
+              placeholder="Ví dụ: Hà Nội" /></label
+          ><label
+            >Địa chỉ chi tiết <span>*</span
+            ><input
+              name="address"
+              required
+              minlength="10"
+              maxlength="500"
+              autocomplete="street-address"
+              placeholder="Số nhà, đường, phường/xã, quận/huyện" /></label
+          ><label
+            >Ghi chú cho đơn hàng<textarea
+              name="note"
+              maxlength="500"
+              placeholder="Điều bạn muốn Gió lưu ý…"
+            ></textarea>
+          </label>
+          <div class="payment-option">
+            <svg><use href="#i-check" /></svg>
+            <div>
+              <strong>Thanh toán khi nhận hàng (COD)</strong>
+              <p>
+                Chưa thu tiền trực tuyến. Đơn hàng mẫu được lưu trên máy chủ.
+              </p>
+            </div>
+          </div>
+          <label class="consent"
+            ><input name="consent" type="checkbox" required /><span
+              >Tôi đồng ý với
+              <button type="button" data-info="privacy">
+                chính sách dữ liệu
+              </button>
+              và hiểu đây là cửa hàng thử nghiệm.</span
+            ></label
+          >
+          <p id="checkout-error" class="error-message" role="alert"></p>
+          <button type="submit" class="button full" id="place-order">
+            Xác nhận đặt hàng <svg><use href="#i-arrow" /></svg>
+          </button>
+        </form>
+        <aside id="checkout-summary" class="checkout-summary"></aside>
+      </div>
+    </dialog>
+    <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title">
+      <button
+        class="dialog-close icon-button"
+        data-close="info-dialog"
+        aria-label="Đóng thông tin"
+      >
+        <svg><use href="#i-close" /></svg>
+      </button>
+      <div id="info-content"></div>
+    </dialog>
+    <dialog
+      id="orders-dialog"
+      class="orders-dialog"
+      aria-labelledby="orders-title"
+    >
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">GÓC NHỎ CỦA BẠN</p>
+          <h2 id="orders-title">Đơn hàng của tôi</h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close="orders-dialog"
+          aria-label="Đóng đơn hàng"
+        >
+          <svg><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div id="orders-content"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      aria-label="Về đầu trang"
+      hidden
+    >
+      ↑
+    </button>
+  </body>
+</html>
